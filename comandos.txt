@@ -1,0 +1,15 @@
+%HADOOP_HOME%\sbin\start-all.cmd
+%HADOOP_HOME%\sbin\stop-all.cmd
+
+hdfs dfs -put C:\ruta\archivo\dataset.txt /
+
+%HADOOP_HOME%\bin\yarn jar %HADOOP_HOME%\claseproyecto.jar org.apache.hadoop.proyecto.WordCount /dataset.txt /outuna una
+
+%HADOOP_HOME%\bin\yarn jar %HADOOP_HOME%\claseproyecto.jar org.apache.hadoop.proyecto.Ordenar /outuna/part-r-00000 /outunaord una
+
+%HADOOP_HOME%\bin\yarn jar %HADOOP_HOME%\claseproyecto.jar org.apache.hadoop.proyecto.WordCount /dataset.txt /outdos dos
+
+%HADOOP_HOME%\bin\yarn jar %HADOOP_HOME%\claseproyecto.jar org.apache.hadoop.proyecto.Ordenar /outdos/part-r-00000 /outdosord dos
+
+// PARA BORRAR LA CARPETA
+hdfs dfs -rm -r -f /carpeta
